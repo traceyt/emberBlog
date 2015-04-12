@@ -5,5 +5,15 @@ var Router = Ember.Router.extend({
   location: config.locationType
 });
 
-export default Router.map(function() {
+Router.map(function() {
+    this.route('about');
+    this.resource('posts', function () {
+        this.resource('post', { path: ':post_id'});        
+    });
+
 });
+
+export default Router;
+
+//export default Router.map(function() {
+//});
